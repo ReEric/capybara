@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- font star 思源黑體 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- font end 思源黑體-->
+
+    <style>
+        a {
+            font-size: 24px;
+            color: black;
+            font-family: 'Noto Sans TC', sans-serif;
+            font-weight: 600;
+        }
+        
+        .nav-link {
+            color: black !important;
+        }
+        
+        body {
+            background-color: rgb(246, 244, 244);
+        }
+        
+        .navbar {
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            /* 水平偏移量 | 垂直偏移量 | 模糊度 | 顏色 */
+        }
+        
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 1080px;
+            gap: 20px;
+            /* 在项目之间添加 10px 的间距 */
+            margin-top: 30px;
+            margin-left: 33px;
+        }
+        
+        .item {
+            flex-basis: calc(25% - 20px);
+            /* 计算每个项目的基础大小，减去边距 */
+            margin-bottom: 20px;
+            /* 底部边距 */
+            text-align: center;
+            /* 图片和标题居中 */
+        }
+        
+        .item img {
+            width: 360px;
+            height: 225px;
+            max-width: 1000px;
+            /* 设置图像的最大宽度 */
+            max-height: 1000px;
+            /* 设置图像的最大高度 */
+            border-radius: 8px;
+        }
+        
+        .title {
+            margin-top: 10px;
+            /* 标题与图片之间的间距 */
+            font-weight: bold;
+            /* 加粗标题文本 */
+            font-size: 20px;
+        }
+        
+        h1 {
+            padding: 20px;
+            font-weight: 600;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-wrap: wrap;
+                margin-left: 0px;
+                /* 在手机屏幕上设置 flex-wrap 为 wrap */
+            }
+            .item {
+                flex-basis: 100%;
+                /* 在手机屏幕上每行显示两个项目 */
+            }
+        }
+        /* 聯絡資訊start */
+        
+        footer {
+            background-color: white;
+            color: black;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            margin-bottom: 20px;
+        }
+        
+        .footer-content h2 {
+            margin-bottom: 10px;
+        }
+        
+        .footer-content p {
+            margin: 5px 0;
+        }
+        
+        .social-icons {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .social-icons li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        
+        .social-icons li:last-child {
+            margin-right: 0;
+        }
+        
+        .social-icons a {
+            color: #fff;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        
+        .social-icons a:hover {
+            color: #ccc;
+        }
+        /* 聯絡資訊end */
+    </style>
+
+
+
+
+
+
+
+
+</head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white ">
+        <img src="logo.png" alt="Home Icon"><a class="nav-link" href="#">水豚君 </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navDropdown">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- 導覽列 -->
+        <div class="collapse navbar-collapse" id="navDropdown">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><img src="logo.png" alt="Home Icon"> 首頁</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><img src="logo.png" alt="About Icon"> 關於</a>
+                </li>
+                <!-- 下拉式選單 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"><img src="logo.png" alt="Language Icon"> 網頁程式語言</a>
+
+                    <!-- 下拉式選單選項 -->
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">HTML</a>
+                        <a class="dropdown-item" href="#">CSS</a>
+                        <a class="dropdown-item" href="#">JS</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1>商家資訊</h1>
+    <div class="container">
+        <div class="item">
+            <a href="https://www.youtube.com/watch?v=50VNCymT-Cs&list=RD50VNCymT-Cs&start_radio=1"><img src="/img/rest1.jpg" alt="Image 1"></a>
+            <p class="title">标题 1</p>
+        </div>
+        <div class="item">
+            <img src="/img/rest2.jpg" alt="Image 2">
+            <p class="title">标题 2</p>
+        </div>
+        <div class="item">
+            <img src="img/rest3.jpg" alt="Image 3">
+            <p class="title">标题 3</p>
+        </div>
+
+
+    </div>
+
+    <div class="container">
+        <div class="item">
+            <img src="/img/rest4.png" alt="Image 1">
+            <p class="title">标题 1</p>
+        </div>
+        <div class="item">
+            <img src="/img/bk2.jpg" alt="Image 2">
+            <p class="title">标题 2</p>
+        </div>
+        <div class="item">
+            <img src="img/bk3.jpg" alt="Image 3">
+            <p class="title">标题 3</p>
+        </div>
+
+
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <h2>联系我们</h2>
+            <p>公司地址：123 Street, City, Country</p>
+            <p>电话：123-456-7890</p>
+            <p>邮箱：info@example.com</p>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

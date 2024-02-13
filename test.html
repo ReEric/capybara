@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品筛选</title>
+</head>
+<style>
+    #productList {
+        display: flex;
+        flex-wrap: wrap;
+        /* 允许换行 */
+        justify-content: space-between;
+        /* 每个项目之间的间隔相等 */
+    }
+    
+    .product-image {
+        width: 50px;
+        /* 設置圖片寬度 */
+        height: 50px;
+        /* 自動計算高度，保持圖片比例 */
+    }
+</style>
+
+<body>
+    <input type="text" id="searchInput" placeholder="輸入商品名稱">
+
+    <div id="productList">
+        <!-- 商品列表将显示在这里 -->
+    </div>
+
+
+
+    <script>
+        fetch('products.json')
+            .then(response => response.json())
+            .then(data => {
+                const productList = document.getElementById('productList');
+                const searchInput = document.getElementById('searchInput');
+
+                // 根据关键字过滤商品数据
+                searchInput.addEventListener('input', () => {
+                    const searchKeyword = searchInput.value.trim().toLowerCase();
+                    productList.innerHTML = ''; // 清空列表
+
+                    if (searchKeyword === '') return; // 如果搜索关键字为空，则不执行筛选操作
+
+                    data.forEach(product => {
+                        if (product.name.toLowerCase().includes(searchKeyword)) {
+                            const productItem = document.createElement('div');
+                            productItem.classList.add('product-item');
+
+                            const productName = document.createElement('h3');
+                            productName.textContent = product.name;
+
+                            // 创建图片链接
+                            const productLink = document.createElement('a');
+                            productLink.href = product.link; // 设置链接地址
+
+                            const productImage = document.createElement('img');
+                            productImage.classList.add('product-image');
+                            productImage.src = product.image;
+                            productImage.alt = product.name;
+
+                            productLink.appendChild(productImage);
+
+                            const productPrice = document.createElement('p');
+                            productPrice.textContent = `價格: ￥${product.price}`;
+                            productItem.appendChild(productName);
+                            productItem.appendChild(productLink);
+
+                            productItem.appendChild(productPrice);
+
+
+                            productList.appendChild(productItem);
+                        }
+                    });
+                });
+            })
+            .catch(error => console.error('加载数据时出错：', error));
+    </script>
+
+
+</body>
+
+</html>
